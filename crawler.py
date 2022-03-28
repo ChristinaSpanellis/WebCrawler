@@ -34,14 +34,13 @@ def crawl(URL, crawl_limit = 100):
                             elif (parsed_url.query):
                                 urls_to_crawl.put(next_url + "/" +potential_url)
             urls_crawled.add(next_url)
-            urls_to_crawl.get()
+        except ValueError as e: # catches non-URL inputs
+            pass
         except HTTPError as e: # I decided to include URLs that return HTTP errors since the spec didn't specify whether only accessible URLs should be reported or not
             urls_crawled.add(next_url)
-            urls_to_crawl.get()
         except URLError as e: # ignores URLs that are malformed or return non-HTTP errors
-            urls_to_crawl.get()
-        except ValueError as e: # catches non-URL inputs
-            urls_to_crawl.get()
+            pass
+        urls_to_crawl.get()
         if (len(urls_crawled) % 10 == 0):
             print(str(len(urls_crawled))+"/100 URLs crawled")
     return urls_crawled

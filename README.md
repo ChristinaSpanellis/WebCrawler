@@ -1,5 +1,5 @@
 # WebCrawler
-Basic web crawler to extract and return nested URLs in a requested web page.
+Basic web crawler to extract and return nested URLs in a requested web page. The program will terminate when 100 unique URLs have been found or no more nested URLs are found.
 Language: Python 3.8
 
 # Usage
