@@ -1,4 +1,3 @@
-from multiprocessing.sharedctypes import Value
 from urllib.error import HTTPError, URLError
 import urllib.request, urllib.parse, validators, sys
 from bs4 import BeautifulSoup
