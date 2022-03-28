@@ -5,7 +5,7 @@ from queue import Queue
 
 def crawl(URL, crawl_limit = 100):
     '''
-    Crawls a given URL for further valid URLS, searching recursively through each subpage for more URLs.
+    Crawls a given webpage for nested valid URLS, searching recursively through each subpage for more URLs until 100 have been found or no more are found.
     :param URL: (string) seed URL
     :param crawl_limit: (int) the number of unique URLs to be crawled, the default is 100
     :return: (set) crawled urls
