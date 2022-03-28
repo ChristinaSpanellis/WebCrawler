@@ -34,7 +34,7 @@ def crawl(URL, crawl_limit = 100):
                             elif (parsed_url.query):
                                 urls_to_crawl.put(next_url + "/" +potential_url)
             urls_crawled.add(next_url)
-        except ValueError as e: # catches non-URL inputs
+        except ValueError as e: # catches non-URL inputs to urllib.request
             pass
         except HTTPError as e: # I decided to include URLs that return HTTP errors since the spec didn't specify whether only accessible URLs should be reported or not
             urls_crawled.add(next_url)
