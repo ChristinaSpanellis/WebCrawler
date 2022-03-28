@@ -18,10 +18,10 @@ Start a container and run the image as follows, replacing {url} with your URL of
 
 ## Without Docker
 
-To run the code you'll first need to install a package. [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a Python library for extracting data from HTML files.
+To run the code you'll first need to install two packages. [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a Python library for extracting data from HTML files. [Validators](https://validators.readthedocs.io/en/latest/) is a Python library for validating various data formats.
 
 
-```pip3 install beautifulsoup4```
+```pip3 install beautifulsoup4 validators```
 
 Run the code as follows, replaing {url} with your URL of choice.
 

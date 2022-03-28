@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from urllib.error import HTTPError, URLError
 import urllib.request, urllib.parse, validators, sys
 from bs4 import BeautifulSoup
@@ -37,8 +38,9 @@ def crawl(URL, crawl_limit = 100):
         except HTTPError as e: # I decided to include URLs that return HTTP errors since the spec didn't specify whether only accessible URLs should be reported or not
             urls_crawled.add(next_url)
             urls_to_crawl.get()
-        except URLError as e: # ignores URLs that are malformed or return non-http errors
-            pass
+        except URLError as e: # ignores URLs that are malformed or return non-HTTP errors
+            urls_to_crawl.get()
+        except ValueError as e: # catches non-URL inputs
             urls_to_crawl.get()
         if (len(urls_crawled) % 10 == 0):
             print(str(len(urls_crawled))+"/100 URLs crawled")
