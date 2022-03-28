@@ -49,7 +49,7 @@ def print_urls(urls_crawled):
         print(str(count + 1) + ": " + url)
 
 def main():
-    if (not sys.argv[1]):
+    if (len(sys.argv) < 2):
         print("Please specify a URL")
         exit()
     URL = sys.argv[1]
